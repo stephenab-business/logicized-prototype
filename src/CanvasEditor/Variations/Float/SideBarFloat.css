@@ -1,0 +1,37 @@
+
+  .parts__menu__wrapper {
+    display: grid;
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(16, 1fr);
+  }
+  
+  .parts-menu {
+    /* display: flex;
+    flex-direction: column; 
+    align-self: center;
+    transform: translate(0, 15%);
+    margin-left: 12.5vh;
+    height: 75%;
+    width: 30vh;
+    */
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 16;
+    background:rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    z-index: 100;
+    position: relative;
+  }
+  
+  .parts-menu-list {
+    list-style: none;
+  }
+  
+  .parts-menu h3,
+  .parts-menu-list div {
+    font-size: 0.9em;
+    display: block;
+    margin: 0 0.5em;
+    color: white;
+  }

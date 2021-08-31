@@ -1,0 +1,51 @@
+Notes:
+-------------------------
+
+Creating Custom Nodes:
+- When creating a custom node with multiple Handles, you MUST assign an "id" tag to the actual Handles
+- Cannot edit CSS or styling properties according to ids assigned to Handles (ids are purely used in the React Flow Renderer scripts, index.tsx of src/components/Handle/index.tsx)
+- Notes on Handles:
+    - For some reason, the onConnect function ONLY runs on a handle that is marked "source" (will be editing this as soon as possible and uploading to GitHub)
+    - According to the previously mentioned index.tsx file, the only Handle type that is ACTUALLY defined is the source type, which explains why it is the only one that accepts the onConnect function
+- Locations where anything Handle related is mentioned:
+    - "HandleType = 'source' | 'target'" in src/types/index.ts
+    - in src/components/ConnectionLine/index.tsx
+-- I retract these statements, as I have no clue why, but the onConnect function is only occurring on the output handle of the And Gate Node. This has destroyed all of my thoughts and I am mentally and physically devastated.
+-- Going further down the rabbit hole, it seems that the onConnect function is fired on the element you DRAG from, not on both. We need it on both. Yay.
+-- Not only that, onConnect only gets called ONCE on an individual Node. It doesn't get recalled. Why? I have no f-ing clue.
+
+Styling:
+- For better understanding of styling, it is best to look in the style.css and theme-default.css files in the src folder of the GitHub repository
+- To understand what they affect, check the Getting Started Docs under Theming (under the Overwrite Default Styles section)
+- The styling that is used in the GitHub repository is not actually CSS, but is instead either LESS or SASS(which is also known as SCSS)
+
+Selection:
+- When trying to select an Edge, it is super difficult to actually click it, I already have that in the development plans
+- Edges are formed using SVG paths (which are just HTML elements), so I plan to, somehow, wrap a thin, invisible rectangle (for development, then a more accurate shape later) around every edge so that the user can select THAT rather than the very small path
+    - Further Note: You might be thinking, "Why do all of that? Make the path larger." Yes, you do have a point, but it would allow us to allow for edge weight customization if we had time and/or wanted to.
+
+
+Edges:
+- Apparently, Edges contain an ability to show a context menu. This could be useful in the future.
+
+
+
+C:\Users\Gold Experience\Documents\Classes\canvas-editor-renderer\src\index.ts
+
+C:\Users\Gold Experience\Documents\Classes\canvas-editor-renderer\src\components\ConnectionLine\index.tsx
+
+C:\Users\Gold Experience\Documents\Classes\canvas-editor-renderer\src\components\Handle\handler.ts
+
+C:\Users\Gold Experience\Documents\Classes\canvas-editor-renderer\src\components\Handle\index.tsx
+
+C:\Users\Gold Experience\Documents\Classes\canvas-editor-renderer\src\components\Nodes\utils.ts
+
+C:\Users\Gold Experience\Documents\Classes\canvas-editor-renderer\src\container\EdgeRenderer\index.tsx
+
+C:\Users\Gold Experience\Documents\Classes\canvas-editor-renderer\src\container\EdgeRenderer\utils.ts
+
+C:\Users\Gold Experience\Documents\Classes\canvas-editor-renderer\src\store\reducer.ts
+
+C:\Users\Gold Experience\Documents\Classes\canvas-editor-renderer\src\types\index.ts
+
+C:\Users\Gold Experience\Documents\Classes\canvas-editor-renderer\src\utils\graph.ts

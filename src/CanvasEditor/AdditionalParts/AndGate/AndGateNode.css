@@ -1,0 +1,18 @@
+.and__gate {
+    background-color: white;
+    border: 1px solid #777;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    padding: 10px;
+}
+
+.and__input__a {
+    top: 25%;
+}
+
+.and__input__b {
+    bottom: 5%;
+    top: auto;
+}
+
